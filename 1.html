@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="profile">
+        <div>
+        <h1>Paul V</h1>
+        <p class="title">Web Developer</p>
+        <p>A passionate software developer with a love for solving complex problems through code. </p>
+        </div>
+        <div >
+            <img src="images.png" alt="Profile Picture" class="profile-pic" />
+        </div>
+      </div>
+      <br>
+      <div class="section">
+        <h2 >Skills</h2>
+        <ol style="line-height: 1.6;">
+            <li>
+                <u>Technical Skills</u>
+                <ul>
+                <li>Proficient in HTML, CSS, and JavaScript</li>
+                <li>Experienced with Angular, React, Node.js, and Express.js</li>
+                <li>Familiar with databases like MySQL, PostgreSQL</li>
+                <li>Familiar with C, C++, C#, Java, Python, Unity, and Blender</li>
+                </ul>
+            </li>
+            <li>
+            <u>Soft Skills</u>
+            <ul>
+                <li>Ability to collaborate in cross-functional teams</li>
+                <li>Creative thinking and innovation</li>
+                <li>Excellent problem-solving and analytical abilities</li>
+            </ul>
+            </li>
+            <li>
+             <u>Additional Skills</u>
+            <ul>
+                <li>Fluent in Malayalam, Hindi, and English</li>
+            </ul>
+            </li>
+        </ol>
+    </div>
+
+
+
+      <div class="section">
+        <h2>Contact</h2>
+        <label >Email: paul.v.payyappily@gmail.com</label><br>
+         <label >GitHub : <a href="https://github.com/PaulvPayyappily" style="color: skyblue;">GITHUB-LINK</a></label><br>
+         <label >Phone No: 99827XXXXX</label><br>
+         <label>Address:</label><br>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9158.67734580522!2d76.35269521291073!3d10.05765499641502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1734345432166!5m2!1sen!2sin" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </iframe>
+        </div>
+    </div>
+
+    <div class="right">
+      <div class="section">
+     <h2>Projects</h2>
+        <ol>
+        <li>
+            <span style="font-weight: bold;">Bookmyshow Replica</span>
+        <ul>
+        <li>Frontend: HTML, CSS, JS</li>
+        </ul>
+        </li>
+        <li>
+            <strong>To Do List</strong>
+        <ul>
+        <li>Frontend: HTML, CSS, JS</li>
+        </ul>
+         </li>
+        <li>
+          <strong>E-commerce</strong>
+         <ul>
+        <li>Frontend: React, Tailwind | Backend: Node.js, Express | Database: Postgres</li>
+        </ul>
+        </li>
+        <li>
+            <strong>Work Flow Managment System</strong>
+        <ul>
+        <li>Frontend: React, Tailwind | Backend: Node.js, Express | Database: Postgres</li>
+      </ul>
+     </li>
+        </ol>
+    </div>
+
+      <div class="section">
+        <h2>Education</h2>
+
+        <div class="education-entry">
+        <h3>B.Tech in Computer Science and Design Engineering</h3>
+        <p class="edu-sub">APJ Abdul Kalam Technological University &nbsp; | &nbsp; <em>Expected Graduation: 2026</em></p>
+        <ul>
+        <li><strong>Coursework:</strong> Data Structures, Algorithms, Web Development, Virtual Reality</li>
+     
+        </ul>
+        </div>
+
+        <div class="education-entry">
+         <h3>Higher Secondary School (12th Grade)</h3>
+        <p class="edu-sub">Central Board of Secondary Education &nbsp; | &nbsp; <em>Graduated: 2022</em></p>
+        <ul>
+        <li><strong>Stream:</strong> Science (Physics, Chemistry, Mathematics, Computer Science)</li>
+        <li><strong>Score:</strong> 85% in final exams</li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="section">
+         <h2>Internship</h2>
+
+     <div class="internship-entry">
+     <h3>Web Development </h3>
+     <p class="intern-sub">Nest Digital &nbsp; | &nbsp; <em>16 Dec 2024 – 16 Jan 2025</em></p>
+        <ul>
+        <li>Worked on a real-time web application using Angular</li>
+        <li>Built responsive UI components with Tailwind CSS</li>
+        </ul>
+    </div>
+    </div>
+
+
+    </div>
+  </div>
+  <br>
+
+ <div class="button-container">
+  <button id="downloadBtn">Download as PDF</button>
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  const { jsPDF } = window.jspdf;
+
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const doc = new jsPDF('p', 'pt', 'a4');
+    const container = document.querySelector('.container');
+
+    doc.html(container, {
+      callback: function (doc) {
+        doc.save('resume.pdf');
+      },
+      x: 10,
+      y: 10,
+      width: 570,
+      windowWidth: 900,
+    });
+  });
+</script>
+
+
+</body>
+</html>
